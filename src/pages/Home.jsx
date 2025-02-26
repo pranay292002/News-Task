@@ -1,42 +1,36 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Card from "../commonComponents/Card";
 import { newsData } from "../data/newsData";
 import { useNavigate } from "react-router";
 
 const Home = () => {
+  const [articleData, setArticleData] = useState();
 
-    const [articleData, setArticleData] = useState()
-
-    useEffect(()=>{
-       setArticleData(newsData)
-    },[])
-
+  useEffect(() => {
+    setArticleData(newsData);
+  }, []);
 
   const navigate = useNavigate();
 
-
   const HandleViewDetails = (id) => {
-    
     navigate(`/${id}`);
   };
 
   const toggleFavourite = (id) => {
-    
-       const newData =  articleData.map((article)=>{
-     
-         if(id==article.id){
-            return {...article, isFavourite: !article.isFavourite }
-         }else{
-            return article
-         }
-     })
+    const newData = articleData.map((article) => {
+      if (id == article.id) {
+        return { ...article, isFavourite: !article.isFavourite };
+      } else {
+        return article;
+      }
+    });
 
-     setArticleData(newData)
-   
+    setArticleData(newData);
   };
 
-  const sortedData = articleData?.sort((a1,a2)=>a2.isFavourite-a1.isFavourite)
-
+  const sortedData = articleData?.sort(
+    (a1, a2) => a2.isFavourite - a1.isFavourite
+  );
 
   return (
     <>
