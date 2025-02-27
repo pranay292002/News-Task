@@ -1,15 +1,33 @@
-import React from "react";
+import React, {useState} from "react";
 import StarSvg from "./StarSvg";
 import moment from "moment";
+import parrot from "../assets/pexels-frans-van-heerden-201846-1463295.jpg"
+import { memo } from "react";
 
-const Card = ({ data, HandleViewDetails, toggleFavourite }) => {
+
+const Card = memo(({ data, HandleViewDetails, toggleFavourite }) => {
+
+       const [isSeeMoreDesc, setIsSeeMoreDesc] = useState()
+       const [isSeeMoreTitle, setIsSeeMoreTitle] = useState()
+
+       const slicedTitle = data.title?.length >40 ? data.title.slice(0,40) : data.title;
+       const slicedDesc = data.description?.length >40 ? data.description.slice(0,40) : data.description;
+
+       const handleSeeMoreTitle = ()=>{
+        setIsSeeMoreTitle(prev=>!prev)
+       }
+
+       const handleSeeMoreDesc = ()=>{
+        setIsSeeMoreDesc(prev=>!prev)
+       }
+
   return (
     <>
-      <div className="w-[250px] overflow-hidden m-1 rounded-lg drop-shadow-lg bg-black text-white relative">
+      <div className="w-[250px] h-fit overflow-hidden m-1 rounded-lg drop-shadow-lg bg-black text-white relative">
         <div className="mb-2">
-          <img className="w-full h-34" src={data.urlToImage} alt="image" />
-          <h2 className="px-2 text-zinc-100">{data.title}</h2>
-          <p className="px-2 text-zinc-700 text-[12px]">{data.description}</p>
+          <img className="w-full h-34" src={data.urlToImage ? data.urlToImage : parrot } onError={(e) => e.target.src =  parrot} alt="image" />
+          <h2 className="px-2 text-zinc-100">{isSeeMoreTitle ? data.title : slicedTitle} {!isSeeMoreTitle && <span className="cursor-pointer" onClick={handleSeeMoreTitle}>...see more</span>}</h2>
+          <p className="px-2 text-zinc-700 text-[12px]">{isSeeMoreDesc ? data.description : slicedDesc } {(!isSeeMoreDesc && data.description) && <span className="cursor-pointer" onClick={handleSeeMoreDesc}>...see more</span>}</p>
         </div>
 
         <div className="px-2 flex justify-between">
@@ -39,6 +57,6 @@ const Card = ({ data, HandleViewDetails, toggleFavourite }) => {
       </div>
     </>
   );
-};
+});
 
 export default Card;

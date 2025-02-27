@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Card from "../commonComponents/Card";
 import { newsData } from "../data/newsData";
 import { useNavigate } from "react-router";
+import { memo } from "react";
 
 const Home = () => {
   const [articleData, setArticleData] = useState();
