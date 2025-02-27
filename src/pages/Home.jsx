@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import Card from "../commonComponents/Card";
+import React, { useState, useEffect, lazy, Suspense } from "react";
+const Card = lazy(() => import("../commonComponents/Card"));
 import { newsData } from "../data/newsData";
 import { useNavigate } from "react-router";
-import { memo } from "react";
+import Skeleton from "@mui/material/Skeleton";
 
 const Home = () => {
   const [articleData, setArticleData] = useState();
@@ -14,7 +14,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   const HandleViewDetails = (id) => {
-    navigate(`/${id}`);
+    navigate(`/news-details/${id}`);
   };
 
   const toggleFavourite = (id) => {
@@ -35,14 +35,30 @@ const Home = () => {
 
   return (
     <>
-      <div className="grid lg:grid-cols-4  md:grid-cols-3  sm:grid-cols-2 grid-cols-1 gap-4 justify-items-center p-5">
+      <div className=" grid lg:grid-cols-4  md:grid-cols-3  sm:grid-cols-2 grid-cols-1 gap-4 justify-items-center p-5 mt-16 ">
         {sortedData?.map((data, key) => (
-          <Card
+          <Suspense
             key={key}
-            data={data}
-            HandleViewDetails={HandleViewDetails}
-            toggleFavourite={toggleFavourite}
-          />
+            fallback={
+              <div>
+                <Skeleton
+                  variant="rectangular"
+                  animation="wave"
+                  width={210}
+                  height={118}
+                  sx={{ bgcolor: 'grey.800' }}
+                />
+                <Skeleton animation="wave" sx={{ bgcolor: 'grey.800' }}  />
+                <Skeleton animation="wave" width="60%" sx={{ bgcolor: 'grey.800' }} />
+              </div>
+            }
+          >
+            <Card
+              data={data}
+              HandleViewDetails={HandleViewDetails}
+              toggleFavourite={toggleFavourite}
+            />
+          </Suspense>
         ))}
       </div>
     </>

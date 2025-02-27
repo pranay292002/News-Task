@@ -64,7 +64,7 @@ export const newsData = [
       "Bitcoin maximalist MicroStrategy (MSTR) has extended its Bitcoin buying spree, raising $584 million through a perpetual convertible preferred stock offering ...",
     url: "https://finance.yahoo.com/news/microstrategy-keeps-buying-more-bitcoin-162720093.html",
     urlToImage:
-      "https://media.zenfs.com/en/quartz.com/c743447a97e80df0d1884ddfe9a8859d.jpg",
+      "https://media.zenfs.com/en/quartz.com/c743447a97e80df0d1884ddfe9a8859d",
     publishedAt: "2025-01-31T16:27:20Z",
     isFavourite: false,
   },
@@ -152,11 +152,12 @@ export const newsData = [
   {
     id: 15,
     title:
-      "Bitcoin Price Faces Volatility as Market Braces for Potential $85K Breakdown Following August 2023 Pattern",
-    description: null,
-    url: "https://consent.yahoo.com/v2/collectConsent?sessionId=1_cc-session_855f1010-7003-4d30-97f8-2ef15cb85b3b",
-    urlToImage: null,
-    publishedAt: "2025-02-19T07:57:24Z",
+      "Nowa Tesla Model Y jest lepsza pod każdym względem. Pierwszy test w Polsce",
+    description:
+      "Tesla Model Y po modernizacji nie będzie miała łatwego zadania, wersja przed liftingiem zawiesiła poprzeczkę bardzo wysoko. Jako pierwsza redakcja motoryzacyjna w Polsce sprawdzamy, czy zmiany pozwolą na powtórzenie sukcesu sprzedażowego.",
+    url: "https://motoryzacja.interia.pl/testy/news-nowa-tesla-model-y-jest-lepsza-pod-kazdym-wzgledem-pierwszy,nId,21064258",
+    urlToImage: "https://i.iplsc.com/-/000KNSIM4DKR38TH-C461.webp",
+    publishedAt: "2025-02-25T09:53:05Z",
     isFavourite: false,
   },
 ];

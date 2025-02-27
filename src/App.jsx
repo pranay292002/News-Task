@@ -12,7 +12,7 @@ function App() {
       <Header headerData={headerData} />
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/:id" element={<ArticleDetails />}></Route>
+        <Route path="/news-details/:id" element={<ArticleDetails />}></Route>
       </Routes>
     </>
   );
