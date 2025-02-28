@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import Header from "./commonComponents/Header";
 import { headerData } from "./data/headerData";
 import Home from "./pages/Home";

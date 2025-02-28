@@ -46,10 +46,14 @@ const Home = () => {
                   animation="wave"
                   width={210}
                   height={118}
-                  sx={{ bgcolor: 'grey.800' }}
+                  sx={{ bgcolor: "grey.800" }}
                 />
-                <Skeleton animation="wave" sx={{ bgcolor: 'grey.800' }}  />
-                <Skeleton animation="wave" width="60%" sx={{ bgcolor: 'grey.800' }} />
+                <Skeleton animation="wave" sx={{ bgcolor: "grey.800" }} />
+                <Skeleton
+                  animation="wave"
+                  width="60%"
+                  sx={{ bgcolor: "grey.800" }}
+                />
               </div>
             }
           >

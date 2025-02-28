@@ -71,7 +71,7 @@ export const newsData = [
   {
     id: 7,
     title:
-      "‘Crypto Is Ground Zero’: Hedge Fund Warns Investors Trump Is Inflating a Catastrophic Bubble",
+      "Crypto Is Ground Zero: Hedge Fund Warns Investors Trump Is Inflating a Catastrophic Bubble",
     description: "The $70 billion dollar hedge fund is going full FUD.",
     url: "https://gizmodo.com/crypto-is-ground-zero-hedge-fund-warns-investors-trump-is-inflating-a-catastrophic-bubble-2000557525",
     urlToImage: "https://gizmodo.com/app/uploads/2025/01/BTCBubble.jpg",
@@ -130,7 +130,7 @@ export const newsData = [
     title:
       "Bitcoin's Acquisition Cost Hits Record $40.9K in 2024 as Analysts Predict $40K Floor Price",
     description:
-      "Bitcoin’s average acquisition cost reached an all-time high of $40,980 per BTC at the end of 2024, according to ARK Invest’s Big Ideas 2025 report.",
+      "Bitcoins average acquisition cost reached an all-time high of $40,980 per BTC at the end of 2024, according to ARK Invest’s Big Ideas 2025 report.",
     url: "https://finance.yahoo.com/news/bitcoins-acquisition-cost-hits-record-074618301.html",
     urlToImage:
       "https://media.zenfs.com/en/coinmarketcap_783/d3a0a5bad34a5f140d2405e0e0d5f562",

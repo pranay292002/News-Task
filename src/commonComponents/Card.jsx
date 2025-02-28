@@ -25,7 +25,7 @@ const Card = memo(({ data, HandleViewDetails, toggleFavourite }) => {
 
   return (
     <>
-      <div className="flex flex-col justify-between w-[250px] min-h-74 h-74 overflow-hidden m-1 rounded-lg drop-shadow-lg bg-black text-white relative">
+      <div className="flex flex-col justify-between w-[250px] min-h-74 h-fit overflow-hidden m-1 rounded-lg drop-shadow-lg bg-black text-white relative">
         <div className="mb-2">
           <img
             className="w-full h-34"
